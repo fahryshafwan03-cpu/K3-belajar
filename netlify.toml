@@ -1,0 +1,13 @@
+[build]
+  command = "composer install --no-interaction --prefer-dist --no-progress && npm install --no-fund --no-audit && npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "20"
+  PHP_VERSION = "8.3"
+  CI = "1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php"
+  status = 200
